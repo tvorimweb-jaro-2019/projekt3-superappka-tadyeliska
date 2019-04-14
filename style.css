@@ -17,17 +17,132 @@ body {
     padding: 0;
     margin: 0;
     background-color: #e5e5e5;
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
+    color: #25133d;
+}
+
+p, ul, h1, h2 {
+    margin: 0;
+    padding: 0;
 }
 
 .obal {
-    width: 960px; /* obsah stránky je omezený do pruhu širokého 960px */
+    width: 720px; /* obsah stránky je omezený do pruhu širokého 960px */
+    height: 650px;
     margin: 0 auto; /* pruh je na stránce vycentrovaný */
     background: white;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
+.hlavicka li {
+    display: inline-block;
+	margin: 0;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 15px;
+    
+}
+.vybrana {
+    text-transform: uppercase;
+    font-weight: 700;  
+}
+
+.vizual {
+    
+    width: 720px;
+    height: 340px;
+    background-image: url(images/pozadi.jpg);
+    background-size: 100%;
+    color: white;
+    padding: 30px;
+}
+
+.nazev {
+    font-size: 60px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.popis {
+    font-size: 24px;
+    font-weight: 300;
+    width: 44%;
+    margin-bottom: 40px;
+}
+
+.telefon {
+    position: relative;
+    top: -224px;
+    left: 390px;
+}
+
+.akce {
+    display: inline-block;
+}
+
+.stahnout {
+    width: 290px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #48418e;
+    border: 1px solid white;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 2px 1px #25133d;
+    margin-right: 15px;
+}
+
+.informace {
+    width: 290px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 2px 1px rgb(71, 69, 69);
+}
+
+.kontejner {
+    display: flex; 
+    flex-direction: row;
+    padding: 30px 0;
+    justify-content: space-evenly;
+    text-align: center;
+    font-size: 12px;
+    color: #48418e;
+}
+
+.sloupec {
+    width: calc( (100% - 120px) / 3);
+}
+.foto img {
+    margin-bottom: 10px;
+}
+
+.mininadpis {
+    margin-bottom: 10px;
+}
+
+.web {
+    background-color: #48418e;
+    height: 30px;
+    text-align: center;
+    padding: 5px;
+    font-size: 10px;
+    color: white;
+}
+
+.minitext {
+    font-size: 11px;
+}
 /* ----- zde začni psát vlastní CSS ----- */
