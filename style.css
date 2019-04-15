@@ -74,9 +74,9 @@ p, ul, h1, h2 {
 }
 
 .telefon {
-    position: relative;
-    top: -224px;
-    left: 390px;
+    position: absolute;
+    top: 85px;
+    left: 735px;
 }
 
 .akce {
