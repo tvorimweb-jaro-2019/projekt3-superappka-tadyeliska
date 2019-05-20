@@ -30,6 +30,8 @@ p, ul, h1, h2 {
 }
 
 .obal {
+    display: flex;
+    flex-direction: column;
     width: 720px; /* obsah stránky je omezený do pruhu širokého 960px */
     height: 650px;
     margin: 0 auto; /* pruh je na stránce vycentrovaný */
@@ -37,13 +39,23 @@ p, ul, h1, h2 {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.hlavicka li {
+.obsah {
+    flex: 1;
+}
+/* .hlavicka {
+        display: flex; (lešpí abych nastavila flex než inline a řešila paddingy) 
+        align-items: center;
+        padding: 0 30px;
+        height: x;
+    } */
+
+
+.hlavicka li { 
     display: inline-block;
 	margin: 0;
     cursor: pointer;
     padding: 10px;
-    margin: 0 15px;
-    
+    margin: 0 15px; /*stačí jen zprava 0 15px 0 0 */    
 }
 .vybrana {
     text-transform: uppercase;
@@ -52,6 +64,7 @@ p, ul, h1, h2 {
 
 .vizual {
     
+    position: relative;
     width: 720px;
     height: 340px;
     background-image: url(images/pozadi.jpg);
@@ -69,25 +82,20 @@ p, ul, h1, h2 {
 .popis {
     font-size: 24px;
     font-weight: 300;
-    width: 44%;
+    width: 44%; /* místo šířky, změnit v html přímo zalomování <br /> */
     margin-bottom: 40px;
 }
 
 .telefon {
     position: absolute;
-    top: 85px;
-    left: 735px;
+    bottom: 0; /*v tomhle případě raději použít bottom, down: 0 */
+    right: 0;
 }
 
-.akce {
-    display: inline-block;
-}
-
-.stahnout {
-    width: 290px;
+.tlacitko { 
+    width: 290px; /*tohle se vůbec neuplatnuje, protože nemám display: inline-block, vychází to proto z délky textu */
     padding: 15px;
     border-radius: 5px;
-    background-color: #48418e;
     border: 1px solid white;
     color: white;
     font-size: 14px;
@@ -95,49 +103,45 @@ p, ul, h1, h2 {
     text-align: center;
     text-decoration: none;
     box-shadow: 0 2px 2px 1px #25133d;
+}
+.stahnout {
+    background-color: #48418e;
     margin-right: 15px;
 }
 
 .informace {
-    width: 290px;
-    padding: 15px;
-    border-radius: 5px;
     background-color: transparent;
-    border: 1px solid white;
-    color: white;
-    font-size: 14px;
-    font-weight: 400;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: 0 2px 2px 1px rgb(71, 69, 69);
 }
 
 .kontejner {
     display: flex; 
     flex-direction: row;
-    padding: 30px 0;
-    justify-content: space-evenly;
+    padding: 30px;
+    justify-content: space-evenly; /*Ondra by ho tam vůbec neměl a nastavil jen padding: 30px; */
     text-align: center;
     font-size: 12px;
     color: #48418e;
 }
 
 .sloupec {
-    width: calc( (100% - 120px) / 3);
+    flex: 1;
+
 }
 .foto img {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /*Ondra by nastavil spíš parentovi "class = foto */
+    width: 50px;
 }
 
 .mininadpis {
     margin-bottom: 10px;
 }
 
-.web {
+.web {  /*  zabalit všechno, co je v obalu, dát obalu display: flex, flex-direction: column, a potomkovi flex 1 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #48418e;
     height: 30px;
-    text-align: center;
-    padding: 5px;
     font-size: 10px;
     color: white;
 }
